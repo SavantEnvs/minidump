@@ -1,0 +1,10 @@
+project: savantenvs/minidump
+# seed-from: https://app.mayhem.security/savantenvs/minidump/parse-fuzz
+target: parse-fuzz-mined-4945b10
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/parse-fuzz-mined-4945b10/testsuite
+cmds:
+  - cmd: /mayhem/parse-fuzz
+    libfuzzer: true
+    max_length: 8000000
